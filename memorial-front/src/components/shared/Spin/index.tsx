@@ -1,4 +1,3 @@
-import React from 'react';
 import './spin.css';
 
 const Spin = () => {

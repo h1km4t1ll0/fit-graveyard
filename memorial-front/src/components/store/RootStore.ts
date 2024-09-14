@@ -38,19 +38,20 @@ const RootStore = types.model({
           },
         }[],
       }> = yield axios.get(`${import.meta.env.VITE_API_URL}/api/memorial-users?sort=id:desc`);
-
+      // @ts-expect-error TS2322
       self.students = studentsResponse.data.data.map(
-        (student) => ({
-          id: student.id,
-          name: student.attributes.name ?? 'Нет имени...',
-          image: student.attributes.image ?? 'https://via.placeholder.com/150',
-          from: student.attributes.from?.split('-').join('.') ?? '...',
-          to: student.attributes.to?.split('-').join('.') ?? '...',
-          additionalText: student.attributes.additionalText ?? null,
-          supportCount: student.attributes.supportCount ?? 0,
-          candlesCount: student.attributes.candlesCount ?? 0,
-          studentStatus: student.attributes.studentStatus,
-        }),
+        (student) =>
+          Student.create({
+            id: student.id,
+            name: student.attributes.name ?? 'Нет имени...',
+            image: student.attributes.image ?? 'https://via.placeholder.com/150',
+            from: student.attributes.from?.split('-').join('.') ?? '...',
+            to: student.attributes.to?.split('-').join('.') ?? '...',
+            additionalText: student.attributes.additionalText ?? null,
+            supportCount: student.attributes.supportCount ?? 0,
+            candlesCount: student.attributes.candlesCount ?? 0,
+            studentStatus: student.attributes.studentStatus,
+          }),
       );
       self.header = siteSettings.data.data.attributes.header as string;
       self.headerBody = siteSettings.data.data.attributes.footerText;

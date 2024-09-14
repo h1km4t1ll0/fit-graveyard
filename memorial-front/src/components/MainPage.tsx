@@ -9,7 +9,6 @@ import {observer} from "mobx-react-lite";
 import Spin from "./shared/Spin";
 import axios from "axios";
 import {useAlert} from "./shared/Alert";
-import React from 'react';
 
 const MainPage: FC = () => {
   const store = useStore();

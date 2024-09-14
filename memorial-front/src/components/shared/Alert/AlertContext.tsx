@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from 'react';
+import {createContext, FC, ReactNode, useContext, useState} from 'react';
 import {AlertList} from "./AlertContainer";
 
 
@@ -10,8 +10,8 @@ export const useAlert = () => {
   return useContext(AlertContext);
 };
 
-export const AlertProvider = ({children}) => {
-  const [alerts, setAlerts] = useState([]);
+export const AlertProvider: FC<{ children: ReactNode | undefined }> = ({children}) => {
+  const [alerts, setAlerts] = useState<{ id: string, status: string, message: string }[]>([]);
 
   const show = ({status, message}: { status: string, message: string }) => {
     const id = `${Date.now()}-${crypto.randomUUID()}`;

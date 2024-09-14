@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import {FC} from "react";
 import Alert from "./alert";
 
 export const AlertList: FC<{
