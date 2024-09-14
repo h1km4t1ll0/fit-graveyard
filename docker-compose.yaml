@@ -3,20 +3,8 @@ services:
     build: ./memorial-strapi
     ports:
       - "1339:1337"
-    environment:
-      - DATABASE_PORT=5432
-      - DATABASE_CLIENT=postgres
-      - DATABASE_USERNAME=postgres
-      - DATABASE_PASSWORD=hFwI/@MvZJJ[Y2WBq£1,(BN8\[-8Yu5^
-      - DATABASE_HOST=database
-      - EMAIL_SENDER_ADDRESS=noreply@elephahealth.com
-      - APP_KEYS="toBeModified1,toBeModified2"
-      - API_TOKEN_SALT=tobemodified
-      - ADMIN_JWT_SECRET=tobemodified
-      - TRANSFER_TOKEN_SALT=tobemodified
-      - JWT_SECRET=RWjsAzs32r8nqfpqP1dLlA==
-      - BOT_TOKEN=6652038217:AAEY0Znq7UHaM4aP7WF8ZXnP6Ef99sFd-B4
-      - CHAT_IDS=-276800548,
+    env_file:
+      - ./memorial-strapi/.env
     command: /bin/sh -c "yarn run start"
     depends_on:
       - database-platform
@@ -35,11 +23,10 @@ services:
     restart: always
     expose:
       - "5432"
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=hFwI/@MvZJJ[Y2WBq£1,(BN8\[-8Yu5^
+    env_file:
+      - ./memorial-strapi/.env
     volumes:
-      - elof_database-platform:/var/lib/postgresql/data2
+      - elof_database-memorial:/var/lib/postgresql/data2
     networks:
       nw:
         aliases:
@@ -53,8 +40,9 @@ services:
       dockerfile: Dockerfile
     env_file:
       - ./memorial-front/.env
+
 volumes:
-  elof_database-platform:
+  elof_database-memorial:
 
 networks:
   nw:
