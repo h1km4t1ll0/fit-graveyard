@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_settings",
+  "info": {
+    "singularName": "site-setting",
+    "pluralName": "site-settings",
+    "displayName": "siteSettings"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "footerText": {
+      "type": "text"
+    },
+    "headerBodyText": {
+      "type": "text"
+    },
+    "header": {
+      "type": "string"
+    }
+  }
+}

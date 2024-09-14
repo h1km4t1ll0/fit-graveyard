@@ -1,0 +1,25 @@
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.spinner {
+    width: 80px; /* Spinner size */
+    height: 80px; /* Spinner size */
+    border: 8px solid rgba(255, 255, 255, 0.3); /* Light border */
+    border-top: 8px solid #ffffff; /* Bright spinner color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite; /* Animation properties */
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.5); /* Soft glow effect */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

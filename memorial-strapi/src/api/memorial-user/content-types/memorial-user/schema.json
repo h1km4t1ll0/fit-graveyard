@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "memorial_users",
+  "info": {
+    "singularName": "memorial-user",
+    "pluralName": "memorial-users",
+    "displayName": "MemorialUser"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "string",
+      "default": "https://via.placeholder.com/150"
+    },
+    "from": {
+      "type": "date"
+    },
+    "to": {
+      "type": "date"
+    },
+    "additionalText": {
+      "type": "text"
+    },
+    "supportCount": {
+      "type": "integer"
+    },
+    "candlesCount": {
+      "type": "integer"
+    },
+    "studentStatus": {
+      "type": "enumeration",
+      "enum": [
+        "ALIVE",
+        "BAD",
+        "DROPPED",
+        "UNKNOWN"
+      ],
+      "default": "UNKNOWN"
+    }
+  }
+}

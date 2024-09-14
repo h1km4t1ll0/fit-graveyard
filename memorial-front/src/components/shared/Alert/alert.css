@@ -1,0 +1,21 @@
+.alert-container {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Space inside the alert */
+
+    margin-bottom: 10px; /* Space between alerts */
+    opacity: 1; /* Fully visible */
+    animation: fadeIn 0.5s forwards; /* Fade-in animation */
+}
+
+.alert-container.error {
+    border: 2px solid #af4c4c; /* Green border */
+    box-shadow: 0 0 20px rgba(175, 76, 76, 0.5); /* Glowing effect */
+}
+
+.alert-container.success {
+    border: 2px solid #4CAF50; /* Green border */
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.5); /* Glowing effect */
+}
